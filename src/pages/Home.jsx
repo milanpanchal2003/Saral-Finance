@@ -1,0 +1,133 @@
+import React from 'react';
+// Update the path below to your actual image location
+import { useEffect, useState } from "react";
+import Card from '../components/Card';
+import Emi from '../components/Emi';
+import Features from '../components/Config';
+
+export default function Home() {
+  const hour = new Date().getHours();
+  const greeting =
+    hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
+
+  const [fact, setFact] = useState("");
+
+  // Some finance facts (dynamic info)
+  const facts = [
+    "Saving just ₹500 per month can grow into ₹6 lakh in 10 years with compounding.",
+    "The Rule of 72: Divide 72 by your interest rate to know how fast money doubles.",
+    "India has one of the fastest-growing fintech markets in the world.",
+    "Diversification is the safest way to minimize risk in investments.",
+    "An emergency fund should cover at least 3-6 months of expenses.",
+  ];
+
+  useEffect(() => {
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    setFact(randomFact);
+  }, []);
+
+  return (
+   <>
+  <div className="bg-gray-50 min-h-screen pt-16 sm:pt-20">
+      {/* Hero Section */}
+      <section className="text-center px-2 sm:px-4 md:px-20 py-10 sm:py-16 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg tracking-tight">
+          {greeting}, Welcome to Saral Finance
+        </h1>
+  <p className="text-base xs:text-lg md:text-xl max-w-xs sm:max-w-2xl mx-auto font-medium drop-shadow mb-6">
+          Smarter financial tools to help you manage, invest, and grow your wealth with confidence.
+        </p>
+        <a
+          href="/services"
+          className="bg-white text-yellow-700 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow hover:bg-gray-100 transition-all duration-300 text-sm sm:text-base"
+        >
+          Explore Services
+        </a>
+      </section>
+
+      {/* Features Section */}
+  <section className="max-w-7xl mx-auto px-2 sm:px-4 md:px-12 py-8 sm:py-16 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 text-center">
+  <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 md:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
+          <span className="text-yellow-600 text-3xl">📊</span>
+          <h3 className="text-xl font-bold mt-4 mb-2 text-yellow-600">Smart Investments</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Personalized investment strategies for long-term wealth growth.
+          </p>
+        </div>
+  <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 md:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
+          <span className="text-yellow-600 text-3xl">💳</span>
+          <h3 className="text-xl font-bold mt-4 mb-2 text-yellow-600">Secure Payments</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Fast, safe, and reliable financial transactions with modern tech.
+          </p>
+        </div>
+  <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 md:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
+          <span className="text-yellow-600 text-3xl">📈</span>
+          <h3 className="text-xl font-bold mt-4 mb-2 text-yellow-600">Wealth Growth</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Tools and insights to maximize your savings and investments.
+          </p>
+        </div>
+      </section>
+
+      {/* Dynamic Fact */}
+      <section className="bg-yellow-100 py-8 sm:py-12 text-center">
+        <p className="text-base xs:text-lg sm:text-xl text-gray-800 font-medium max-w-xs sm:max-w-3xl mx-auto px-2">
+          💡 Finance Fact:{" "}
+          <span className="text-yellow-700 font-semibold">{fact}</span>
+        </p>
+      </section>
+
+      {/* Testimonials */}
+      <section className="max-w-6xl mx-auto px-2 sm:px-4 md:px-12 py-10 sm:py-16 text-center">
+        <h2 className="text-2xl xs:text-3xl font-extrabold text-yellow-700 mb-8 sm:mb-12 tracking-tight">What Our Clients Say</h2>
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+          <div className="bg-white rounded-2xl shadow-md p-4 xs:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300">
+            <p className="text-gray-600 italic">
+              “FinanceApp helped me save smarter and invest wisely. Highly recommend!”
+            </p>
+            <h4 className="text-yellow-600 font-semibold mt-4">– Rahul Sharma</h4>
+          </div>
+          <div className="bg-white rounded-2xl shadow-md p-4 xs:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300">
+            <p className="text-gray-600 italic">
+              “Their tools are so easy to use. I feel more confident about my money now.”
+            </p>
+            <h4 className="text-yellow-600 font-semibold mt-4">– Priya Verma</h4>
+          </div>
+          <div className="bg-white rounded-2xl shadow-md p-4 xs:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300">
+            <p className="text-gray-600 italic">
+              “Secure, reliable, and user-friendly. The best finance app I’ve used.”
+            </p>
+            <h4 className="text-yellow-600 font-semibold mt-4">– Amit Patel</h4>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="text-center py-10 sm:py-16 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white">
+        <h2 className="text-2xl xs:text-3xl font-extrabold mb-4 sm:mb-6 tracking-tight">
+          Ready to take control of your finances?
+        </h2>
+        <div className="flex flex-col xs:flex-row justify-center gap-3 sm:gap-4 px-2">
+          <a
+            href="/login"
+            className="bg-white text-yellow-700 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow hover:bg-gray-100 transition-all duration-300 text-sm sm:text-base"
+          >
+            Login
+          </a>
+          <a
+            href="/signup"
+            className="bg-white text-yellow-700 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow hover:bg-gray-100 transition-all duration-300 text-sm sm:text-base"
+          >
+            Sign Up
+          </a>
+        </div>
+      </section>
+    </div>
+    <Features/>
+    <Emi/>
+    <Card/>
+   </>
+  );
+};
+

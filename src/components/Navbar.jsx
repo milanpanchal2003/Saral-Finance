@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import img1 from '../assets/image/saral.png'; // update with your path
 
@@ -10,7 +11,12 @@ const Navbar = () => {
   };
 
   return (
-  <nav className="bg-white shadow-sm fixed top-0 w-full z-50 border-b border-gray-200 mb-8">
+  <motion.nav
+    className="bg-white shadow-sm fixed top-0 w-full z-50 border-b border-gray-200 mb-8"
+    initial={{ y: -60, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.7 }}
+  >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center space-x-2 text-2xl font-bold text-yellow-600">
@@ -48,7 +54,7 @@ const Navbar = () => {
           <Link to="/login" className="block px-4 py-3 text-white hover:bg-yellow-300 hover:text-yellow-600 focus:text-yellow-600 focus:bg-yellow-300 transition-colors" onClick={() => setMenuOpen(false)}>Login</Link>
         </div>
       </div>
-    </nav>
+  </motion.nav>
   );
 };
 

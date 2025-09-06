@@ -1,5 +1,6 @@
 // src/pages/Login.jsx
 import { useState } from "react";
+import { motion } from 'framer-motion';
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -19,18 +20,41 @@ export default function Login() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-20">
+    <motion.div
+      className="bg-gray-50 min-h-screen pt-20"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       {/* Hero Section */}
-      <section className="text-center px-4 md:px-20 py-12 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg">
+      <motion.section
+        className="text-center px-4 md:px-20 py-12 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg tracking-tight">Login</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto font-medium drop-shadow">
           {greeting}, welcome back to FinanceApp!
         </p>
-      </section>
+  </motion.section>
 
       {/* Login Form */}
-      <section className="w-full max-w-md mx-auto px-2 sm:px-6 md:px-8 py-12 sm:py-16">
-        <div className="bg-white shadow-lg rounded-2xl p-6 sm:p-8 border-t-4 border-yellow-500">
+      <motion.section
+        className="w-full max-w-md mx-auto px-2 sm:px-6 md:px-8 py-12 sm:py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+        <motion.div
+          className="bg-white shadow-lg rounded-2xl p-6 sm:p-8 border-t-4 border-yellow-500"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">Sign In to Your Account</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email */}
@@ -91,8 +115,8 @@ export default function Login() {
               <a href="/forgot-password" className="text-yellow-600 font-bold hover:underline">Forgot Password?</a>
             </p>
           </div>
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </motion.section>
+    </motion.div>
   );
 }

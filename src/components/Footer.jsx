@@ -1,8 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGooglePlusG, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 const Footer = () => {
   return (
-  <footer className="bg-white text-yellow-700 pt-8 pb-4 px-4 md:px-0 mt-10 shadow-lg rounded-xl border border-gray-200">
+    <motion.footer
+      className="bg-white text-yellow-700 pt-8 pb-4 px-4 md:px-0 mt-10 shadow-lg rounded-xl border border-gray-200"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-8">
         {/* Contact Info */}
         <div>
@@ -56,7 +62,7 @@ const Footer = () => {
         <p>© 2025 Tours. All rights reserved.</p>
         <a href="https://example.com/" className="hover:text-yellow-600">example.com</a>
       </div>
-    </footer>
+  </motion.footer>
   );
 };
 export default Footer;

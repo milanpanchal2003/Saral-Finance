@@ -74,7 +74,12 @@ export default function Emi() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50 text-neutral-900">
+    <motion.div
+      className="min-h-screen bg-neutral-50 text-neutral-900"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       <header className="sticky top-0 z-20 border-b bg-white/80 backdrop-blur">
         <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -82,7 +87,7 @@ export default function Emi() {
               <FaCalculator size={22} />
             </div>
             <h1 className="text-xl sm:text-2xl font-semibold">
-              EMI Calculator <span className="text-yellow-600">(₹)</span>
+              EMI Calculator <span className="text-yellow-600">(9)</span>
             </h1>
           </div>
           <button
@@ -105,7 +110,7 @@ export default function Emi() {
           <h2 className="text-lg font-semibold mb-4">Loan Details</h2>
           <div className="space-y-4">
             <div>
-              <label className="mb-1 block text-sm font-medium">Loan Amount (₹)</label>
+              <label className="mb-1 block text-sm font-medium">Loan Amount (9)</label>
               <div className="flex rounded-2xl border focus-within:ring-2 focus-within:ring-yellow-600/30">
                 <input
                   type="number"
@@ -183,9 +188,9 @@ export default function Emi() {
           <h2 className="text-lg font-semibold mb-4">Results</h2>
 
           <div className="grid sm:grid-cols-3 gap-3">
-            <ResultCard label="Monthly EMI" value={`₹ ${formatINR(emi)}`} highlight />
-            <ResultCard label="Total Interest" value={`₹ ${formatINR(totalInterest)}`} />
-            <ResultCard label="Total Payment" value={`₹ ${formatINR(totalPayment)}`} />
+            <ResultCard label="Monthly EMI" value={`9 ${formatINR(emi)}`} highlight />
+            <ResultCard label="Total Interest" value={`9 ${formatINR(totalInterest)}`} />
+            <ResultCard label="Total Payment" value={`9 ${formatINR(totalPayment)}`} />
           </div>
 
           <div className="mt-6">
@@ -222,10 +227,10 @@ export default function Emi() {
                         {schedule.map((row) => (
                           <tr key={row.month} className="odd:bg-white even:bg-neutral-50">
                             <td className="px-3 py-2">{row.month}</td>
-                            <td className="px-3 py-2 text-right">₹ {formatINR(row.payment)}</td>
-                            <td className="px-3 py-2 text-right">₹ {formatINR(row.principal)}</td>
-                            <td className="px-3 py-2 text-right">₹ {formatINR(row.interest)}</td>
-                            <td className="px-3 py-2 text-right">₹ {formatINR(row.balance)}</td>
+                            <td className="px-3 py-2 text-right">9 {formatINR(row.payment)}</td>
+                            <td className="px-3 py-2 text-right">9 {formatINR(row.principal)}</td>
+                            <td className="px-3 py-2 text-right">9 {formatINR(row.interest)}</td>
+                            <td className="px-3 py-2 text-right">9 {formatINR(row.balance)}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -237,9 +242,7 @@ export default function Emi() {
           </div>
         </motion.section>
       </main>
-
-      
-    </div>
+    </motion.div>
   );
 }
 

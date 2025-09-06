@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 // Update the path below to your actual image location
 import { useEffect, useState } from "react";
 import Card from '../components/Card';
@@ -28,9 +29,20 @@ export default function Home() {
 
   return (
    <>
-  <div className="bg-gray-50 min-h-screen pt-16 sm:pt-20">
+  <motion.div
+    className="bg-gray-50 min-h-screen pt-16 sm:pt-20"
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+  >
       {/* Hero Section */}
-      <section className="text-center px-2 sm:px-4 md:px-20 py-10 sm:py-16 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg">
+      <motion.section
+        className="text-center px-2 sm:px-4 md:px-20 py-10 sm:py-16 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg tracking-tight">
           {greeting}, Welcome to Saral Finance
         </h1>
@@ -43,10 +55,16 @@ export default function Home() {
         >
           Explore Services
         </a>
-      </section>
+  </motion.section>
 
       {/* Features Section */}
-  <section className="max-w-7xl mx-auto px-2 sm:px-4 md:px-12 py-8 sm:py-16 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 text-center">
+      <motion.section
+        className="max-w-7xl mx-auto px-2 sm:px-4 md:px-12 py-8 sm:py-16 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
   <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 md:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
           <span className="text-yellow-600 text-3xl">📊</span>
           <h3 className="text-xl font-bold mt-4 mb-2 text-yellow-600">Smart Investments</h3>
@@ -68,18 +86,30 @@ export default function Home() {
             Tools and insights to maximize your savings and investments.
           </p>
         </div>
-      </section>
+  </motion.section>
 
       {/* Dynamic Fact */}
-      <section className="bg-yellow-100 py-8 sm:py-12 text-center">
+      <motion.section
+        className="bg-yellow-100 py-8 sm:py-12 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
         <p className="text-base xs:text-lg sm:text-xl text-gray-800 font-medium max-w-xs sm:max-w-3xl mx-auto px-2">
           💡 Finance Fact:{" "}
           <span className="text-yellow-700 font-semibold">{fact}</span>
         </p>
-      </section>
+  </motion.section>
 
       {/* Testimonials */}
-      <section className="max-w-6xl mx-auto px-2 sm:px-4 md:px-12 py-10 sm:py-16 text-center">
+      <motion.section
+        className="max-w-6xl mx-auto px-2 sm:px-4 md:px-12 py-10 sm:py-16 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
         <h2 className="text-2xl xs:text-3xl font-extrabold text-yellow-700 mb-8 sm:mb-12 tracking-tight">What Our Clients Say</h2>
         <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           <div className="bg-white rounded-2xl shadow-md p-4 xs:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300">
@@ -101,10 +131,16 @@ export default function Home() {
             <h4 className="text-yellow-600 font-semibold mt-4">– Amit Patel</h4>
           </div>
         </div>
-      </section>
+  </motion.section>
 
       {/* CTA Section */}
-      <section className="text-center py-10 sm:py-16 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white">
+      <motion.section
+        className="text-center py-10 sm:py-16 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.5 }}
+      >
         <h2 className="text-2xl xs:text-3xl font-extrabold mb-4 sm:mb-6 tracking-tight">
           Ready to take control of your finances?
         </h2>
@@ -122,8 +158,8 @@ export default function Home() {
             Sign Up
           </a>
         </div>
-      </section>
-    </div>
+      </motion.section>
+    </motion.div>
     <Features/>
     <Emi/>
     <Card/>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const features = [
   {
@@ -21,8 +22,12 @@ const features = [
 
 export default function Card() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
-   
+    <motion.div
+      className="min-h-screen bg-gray-100 text-gray-800"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
 
       {/* Hero Section */}
       <section className="bg-yellow-600 text-white py-20">
@@ -36,22 +41,41 @@ export default function Card() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16">
+      <motion.section
+        className="py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-3xl font-bold text-center mb-12">Why Choose FinWise?</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+              <motion.div
+                key={idx}
+                className="bg-white p-6 rounded-lg shadow hover:shadow-md transition"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+              >
                 <h4 className="text-xl font-semibold text-indigo-600 mb-2">{feature.title}</h4>
                 <p>{feature.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Chart Placeholder */}
-      <section className="py-20 bg-gray-200">
+      <motion.section
+        className="py-20 bg-gray-200"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold mb-6">Live Market Trends</h3>
           <div className="bg-white rounded-lg shadow-md p-8">
@@ -61,7 +85,7 @@ export default function Card() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="bg-white border-t py-6 mt-12">
@@ -69,6 +93,6 @@ export default function Card() {
           © {new Date().getFullYear()} FinWise. All rights reserved.
         </div>
       </footer>
-    </div>
+    </motion.div>
   );
 }

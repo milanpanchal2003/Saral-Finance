@@ -1,5 +1,6 @@
 // src/pages/Contact.jsx
 import { useState } from "react";
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const today = new Date().toLocaleDateString("en-IN", {
@@ -25,48 +26,101 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-20">
+    <motion.div
+      className="bg-gray-50 min-h-screen pt-20"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       {/* Hero Section */}
-      <section className="text-center px-6 md:px-20 py-12 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto">
+      <motion.section
+        className="text-center px-4 md:px-20 py-12 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg rounded-2xl mb-10"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg tracking-tight">Contact Us</h1>
+        <p className="text-lg md:text-xl max-w-2xl mx-auto font-medium drop-shadow">
           We’d love to hear from you! Reach out with any questions or feedback.
         </p>
-      </section>
+      </motion.section>
 
       {/* Info Section */}
-      <section className="max-w-6xl mx-auto px-6 md:px-12 py-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-        <div className="bg-white shadow-md rounded-2xl p-8 hover:shadow-lg transition">
+      <motion.section
+        className="max-w-6xl mx-auto px-4 md:px-12 py-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+        <motion.div
+          className="bg-white shadow-lg rounded-2xl p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <span className="text-yellow-600 text-3xl mb-3">📞</span>
-          <h3 className="text-xl font-semibold text-gray-800">Phone</h3>
+          <h3 className="text-xl font-bold text-gray-800">Phone</h3>
           <p className="text-gray-600">+91 98765 43210</p>
-        </div>
-        <div className="bg-white shadow-md rounded-2xl p-8 hover:shadow-lg transition">
+        </motion.div>
+        <motion.div
+          className="bg-white shadow-lg rounded-2xl p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <span className="text-yellow-600 text-3xl mb-3">📧</span>
-          <h3 className="text-xl font-semibold text-gray-800">Email</h3>
+          <h3 className="text-xl font-bold text-gray-800">Email</h3>
           <p className="text-gray-600">support@financeapp.com</p>
-        </div>
-        <div className="bg-white shadow-md rounded-2xl p-8 hover:shadow-lg transition">
+        </motion.div>
+        <motion.div
+          className="bg-white shadow-lg rounded-2xl p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <span className="text-yellow-600 text-3xl mb-3">📍</span>
-          <h3 className="text-xl font-semibold text-gray-800">Location</h3>
+          <h3 className="text-xl font-bold text-gray-800">Location</h3>
           <p className="text-gray-600">Mumbai, India</p>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Dynamic Info */}
-      <section className="max-w-4xl mx-auto px-6 md:px-12 py-8 text-center">
+      <motion.section
+        className="max-w-4xl mx-auto px-4 md:px-12 py-8 text-center bg-white rounded-2xl shadow-lg border-t-4 border-yellow-500 mb-10"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
         <p className="text-lg text-gray-700">
           📅 Today is <span className="font-semibold text-yellow-600">{today}</span>
         </p>
         <p className="text-lg text-gray-700 mt-2">
           🕒 Office Hours: <span className="font-semibold text-yellow-600">Mon - Fri, 9 AM - 6 PM</span>
         </p>
-      </section>
+      </motion.section>
 
       {/* Contact Form */}
-      <section className="max-w-4xl mx-auto px-6 md:px-12 py-12">
-        <div className="bg-white shadow-md rounded-2xl p-8">
-          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
+      <motion.section
+        className="max-w-4xl mx-auto px-4 md:px-12 py-12 bg-white rounded-2xl shadow-lg border-t-4 border-yellow-500"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
+        <motion.div
+          className="p-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
             Send Us a Message
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -112,8 +166,8 @@ export default function Contact() {
               </button>
             </div>
           </form>
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </motion.section>
+    </motion.div>
   );
 }

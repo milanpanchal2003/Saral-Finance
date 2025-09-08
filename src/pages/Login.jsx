@@ -21,14 +21,14 @@ export default function Login() {
 
   return (
     <motion.div
-      className="bg-gray-50 min-h-screen pt-20"
+      className="bg-gray-50 min-h-screen w-full pt-20"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
       {/* Hero Section */}
       <motion.section
-        className="text-center px-4 md:px-20 py-12 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg"
+        className="w-full max-w-7xl mx-auto text-center px-4 md:px-20 py-12 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}

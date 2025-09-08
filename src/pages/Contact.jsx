@@ -27,14 +27,14 @@ export default function Contact() {
 
   return (
     <motion.div
-      className="bg-gray-50 min-h-screen pt-20"
+      className="bg-gray-50 min-h-screen w-full pt-20"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
       {/* Hero Section */}
       <motion.section
-        className="text-center px-4 md:px-20 py-12 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg rounded-2xl mb-10"
+        className="w-full max-w-7xl mx-auto text-center px-4 md:px-20 py-12 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white shadow-lg rounded-2xl mb-10"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -48,7 +48,7 @@ export default function Contact() {
 
       {/* Info Section */}
       <motion.section
-        className="max-w-6xl mx-auto px-4 md:px-12 py-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center"
+        className="w-full max-w-7xl mx-auto px-4 md:px-12 py-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -91,7 +91,7 @@ export default function Contact() {
 
       {/* Dynamic Info */}
       <motion.section
-        className="max-w-4xl mx-auto px-4 md:px-12 py-8 text-center bg-white rounded-2xl shadow-lg border-t-4 border-yellow-500 mb-10"
+        className="w-full max-w-4xl mx-auto px-4 md:px-12 py-8 text-center bg-white rounded-2xl shadow-lg border-t-4 border-yellow-500 mb-10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -107,7 +107,7 @@ export default function Contact() {
 
       {/* Contact Form */}
       <motion.section
-        className="max-w-4xl mx-auto px-4 md:px-12 py-12 bg-white rounded-2xl shadow-lg border-t-4 border-yellow-500"
+        className="w-full max-w-4xl mx-auto px-4 md:px-12 py-12 bg-white rounded-2xl shadow-lg border-t-4 border-yellow-500"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

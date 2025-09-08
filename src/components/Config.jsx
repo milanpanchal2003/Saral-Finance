@@ -5,13 +5,13 @@ export default function Features() {
   return (
     <>
     <motion.section
-      className="py-20 bg-gray-50"
+      className="w-full py-20 bg-gray-50"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+  <div className="w-full max-w-7xl mx-auto px-6">
         <h3 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Why {siteConfig.siteName}?
         </h3>

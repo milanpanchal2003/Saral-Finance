@@ -55,7 +55,6 @@ export default function Emi() {
 
   const months = unit === "years" ? Math.round((Number(tenure) || 0) * 12) : Number(tenure) || 0;
 
-  // Fix: define the reset function
   function reset() {
     setPrincipal(500000);
     setRate(10);
@@ -64,7 +63,6 @@ export default function Emi() {
     setShowSchedule(false);
   }
 
-  // Fix: calculate emi, totalInterest, totalPayment, and schedule using useMemo
   const { emi, totalInterest, totalPayment } = React.useMemo(
     () => computeEmi({ principal: Number(principal), annualRatePct: Number(rate), months }),
     [principal, rate, months]
@@ -74,43 +72,53 @@ export default function Emi() {
     [emi, principal, rate, months]
   );
 
-    return (
-      <motion.div
-        className="min-h-screen bg-neutral-50 text-neutral-900"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-      >
-        <header className="sticky top-0 z-20 border-b bg-white/80 backdrop-blur">
-          <div className="mx-auto max-w-5xl px-2 sm:px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="p-2 rounded-2xl bg-yellow-600 text-white shadow">
-                <FaCalculator size={22} />
-              </div>
-              <h1 className="text-lg sm:text-2xl font-semibold">
-                EMI Calculator <span className="text-yellow-600">(₹)</span>
-              </h1>
-            </div>
-            <button
-              onClick={reset}
-              className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 text-sm hover:bg-yellow-50 active:scale-[.98] transition w-full sm:w-auto justify-center"
-              aria-label="Reset"
-            >
-              <FiRefreshCw /> Reset
-            </button>
-          </div>
-        </header>
-
-        <main className="mx-auto max-w-5xl p-2 sm:p-4 grid gap-6 md:grid-cols-2">
-          <motion.section
-            layout
-            className="rounded-2xl bg-white shadow-lg border border-yellow-100 p-4 sm:p-6"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
+  return (
+    <motion.div
+      className="w-full bg-neutral-50 text-neutral-900 flex flex-col"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 60, damping: 18 }}
+    >
+      <header className="sticky top-0 z-20 border-b bg-white/80 backdrop-blur w-full">
+        <motion.div
+          className="mx-auto w-full max-w-5xl px-2 sm:px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 80, damping: 16, delay: 0.1 }}
+        >
+          <motion.div className="flex items-center gap-3" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 80, damping: 14, delay: 0.2 }}>
+            <motion.div className="p-2 rounded-2xl bg-yellow-600 text-white shadow" initial={{ scale: 0.7 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 120, damping: 10, delay: 0.3 }}>
+              <FaCalculator size={22} />
+            </motion.div>
+            <motion.h1 className="text-base xs:text-lg sm:text-2xl font-semibold" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 80, damping: 14, delay: 0.35 }}>
+              EMI Calculator <span className="text-yellow-600">(₹)</span>
+            </motion.h1>
+          </motion.div>
+          <motion.button
+            onClick={reset}
+            className="inline-flex items-center gap-2 rounded-2xl border px-3 py-2 text-xs sm:text-sm hover:bg-yellow-50 active:scale-[.98] transition w-full sm:w-auto justify-center"
+            aria-label="Reset"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ type: "spring", stiffness: 80, damping: 14, delay: 0.4 }}
           >
-            <h2 className="text-lg font-bold mb-4">Loan Details</h2>
-            <div className="space-y-4">
-              <div>
+            <FiRefreshCw /> Reset
+          </motion.button>
+        </motion.div>
+      </header>
+
+      <main className="w-full flex-1 mx-auto max-w-5xl p-1 xs:p-2 sm:p-4 grid gap-4 sm:gap-6 md:grid-cols-2">
+        <motion.section
+          layout
+          className="rounded-2xl bg-white shadow-lg border border-yellow-100 p-3 xs:p-4 sm:p-6 w-full"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ type: "spring", stiffness: 70, damping: 16, delay: 0.15 }}
+        >
+            <motion.h2 className="text-lg font-bold mb-4" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, type: "spring", stiffness: 80 }}>Loan Details</motion.h2>
+            <motion.div className="space-y-4" initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.08 } } }}>
+              <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                 <label className="mb-1 block text-sm font-medium">Loan Amount (₹)</label>
                 <div className="flex rounded-2xl border border-yellow-200 focus-within:ring-2 focus-within:ring-yellow-500/30 bg-yellow-50">
                   <input
@@ -118,13 +126,13 @@ export default function Emi() {
                     inputMode="decimal"
                     value={principal}
                     onChange={(e) => setPrincipal(e.target.value)}
-                    className="w-full rounded-2xl px-4 py-2 outline-none bg-transparent text-base"
+                    className="w-full rounded-2xl px-3 py-2 outline-none bg-transparent text-base"
                     placeholder="e.g., 500000"
                     min={0}
                   />
                 </div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                 <label className="mb-1 block text-sm font-medium">Interest Rate (p.a. %)</label>
                 <div className="flex rounded-2xl border border-yellow-200 focus-within:ring-2 focus-within:ring-yellow-500/30 bg-yellow-50">
                   <input
@@ -133,13 +141,13 @@ export default function Emi() {
                     step="0.01"
                     value={rate}
                     onChange={(e) => setRate(e.target.value)}
-                    className="w-full rounded-2xl px-4 py-2 outline-none bg-transparent text-base"
+                    className="w-full rounded-2xl px-3 py-2 outline-none bg-transparent text-base"
                     placeholder="e.g., 9.5"
                     min={0}
                   />
                 </div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                 <div className="mb-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                   <label className="block text-sm font-medium">Tenure</label>
                   <div className="flex items-center gap-2 text-xs">
@@ -163,45 +171,55 @@ export default function Emi() {
                     inputMode="numeric"
                     value={tenure}
                     onChange={(e) => setTenure(e.target.value)}
-                    className="w-full rounded-2xl px-4 py-2 outline-none bg-transparent text-base"
+                    className="w-full rounded-2xl px-3 py-2 outline-none bg-transparent text-base"
                     placeholder={unit === "years" ? "e.g., 5 (years)" : "e.g., 60 (months)"}
                     min={1}
                   />
                 </div>
                 <p className="mt-1 text-xs text-neutral-500">{unit === "years" ? `${months} months` : `${tenure || 0} months`}</p>
-              </div>
+              </motion.div>
 
-              <div className="flex gap-2 text-sm text-neutral-700 bg-yellow-50 border border-yellow-200 p-3 rounded-2xl">
+              <motion.div className="flex gap-2 text-sm text-neutral-700 bg-yellow-50 border border-yellow-200 p-3 rounded-2xl" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                 <FiInfo className="mt-0.5 shrink-0 text-yellow-600" />
                 <p>
                   EMI uses the standard formula with monthly compounding. Edit values to see results update instantly.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </motion.section>
 
-          <motion.section
-            layout
-            className="rounded-2xl bg-white shadow-lg border border-yellow-100 p-4 sm:p-6"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <h2 className="text-lg font-bold mb-4">Results</h2>
+        <motion.section
+          layout
+          className="rounded-2xl bg-white shadow-lg border border-yellow-100 p-3 xs:p-4 sm:p-6 w-full"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ type: "spring", stiffness: 70, damping: 16, delay: 0.25 }}
+        >
+            <motion.h2 className="text-lg font-bold mb-4" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, type: "spring", stiffness: 80 }}>Results</motion.h2>
+            <motion.div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3" initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.08 } } }}>
+              <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+                <ResultCard label="Monthly EMI" value={`₹ ${formatINR(emi)}`} highlight />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+                <ResultCard label="Total Interest" value={`₹ ${formatINR(totalInterest)}`} />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+                <ResultCard label="Total Payment" value={`₹ ${formatINR(totalPayment)}`} />
+              </motion.div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <ResultCard label="Monthly EMI" value={`₹ ${formatINR(emi)}`} highlight />
-              <ResultCard label="Total Interest" value={`₹ ${formatINR(totalInterest)}`} />
-              <ResultCard label="Total Payment" value={`₹ ${formatINR(totalPayment)}`} />
-            </div>
-
-            <div className="mt-6">
-              <button
+            <div className="mt-5 xs:mt-6">
+              <motion.button
                 onClick={() => setShowSchedule((s) => !s)}
-                className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 text-sm hover:bg-yellow-50 active:scale-[.98] transition w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 rounded-2xl border px-3 py-2 text-xs sm:text-sm hover:bg-yellow-50 active:scale-[.98] transition w-full sm:w-auto justify-center"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, type: "spring", stiffness: 80 }}
               >
                 {showSchedule ? <FiChevronUp /> : <FiChevronDown />}
                 {showSchedule ? "Hide" : "Show"} Amortization Schedule
-              </button>
+              </motion.button>
 
               <AnimatePresence initial={false}>
                 {showSchedule && (
@@ -210,11 +228,11 @@ export default function Emi() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ type: "spring", bounce: 0, duration: 0.35 }}
+                    transition={{ type: "spring", bounce: 0, duration: 0.5 }}
                     className="overflow-hidden"
                   >
-                    <div className="mt-4 max-h-80 overflow-auto rounded-2xl border border-yellow-100 bg-yellow-50">
-                      <table className="min-w-full text-xs sm:text-sm">
+                    <motion.div className="mt-4 max-h-80 xs:max-h-96 overflow-x-auto overflow-y-auto rounded-2xl border border-yellow-100 bg-yellow-50 w-full">
+                      <table className="min-w-[500px] w-full text-xs sm:text-sm">
                         <thead className="bg-yellow-100 text-yellow-700 sticky top-0">
                           <tr>
                             <th className="text-left px-3 py-2 font-medium">Month</th>
@@ -236,7 +254,7 @@ export default function Emi() {
                           ))}
                         </tbody>
                       </table>
-                    </div>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -251,12 +269,12 @@ export default function Emi() {
 function ResultCard({ label, value, highlight = false }) {
   return (
     <div
-      className={`rounded-2xl border p-4 shadow-sm flex flex-col items-center text-center min-w-0 ${
+      className={`rounded-2xl border p-3 xs:p-4 shadow-sm flex flex-col items-center text-center min-w-0 w-full ${
         highlight ? "bg-yellow-50 border-yellow-200" : "bg-white"
       }`}
     >
       <p className="text-xs uppercase tracking-wide text-neutral-500 break-words">{label}</p>
-      <p className={`mt-1 text-lg font-semibold break-words ${highlight ? "text-yellow-700" : "text-neutral-900"}`}>{value}</p>
+      <p className={`mt-1 text-base xs:text-lg font-semibold break-words ${highlight ? "text-yellow-700" : "text-neutral-900"}`}>{value}</p>
     </div>
   );
 }

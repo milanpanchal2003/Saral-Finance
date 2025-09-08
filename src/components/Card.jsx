@@ -23,15 +23,15 @@ const features = [
 export default function Card() {
   return (
     <motion.div
-      className="w-full bg-gray-100 text-gray-800 min-h-0"
+  className="w-full bg-gray-100 text-gray-800 min-h-0"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
 
       {/* Hero Section */}
-      <section className="w-full bg-yellow-600 text-white py-12 sm:py-16 md:py-20">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <section className="w-full bg-yellow-600 text-white py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Take Control of Your Finances</h2>
           <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8">All-in-one finance platform for personal and professional financial growth.</p>
           <button className="bg-white text-indigo-600 font-semibold px-5 py-2.5 sm:px-6 sm:py-3 rounded shadow hover:bg-gray-100 transition">
@@ -42,15 +42,15 @@ export default function Card() {
 
       {/* Features Section */}
       <motion.section
-        className="w-full py-10 sm:py-14 md:py-16"
+        className="w-full py-8 sm:py-12 md:py-16 lg:py-20"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.2 }}
       >
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
+  <div className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Why Choose FinWise?</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}

@@ -36,7 +36,7 @@ export default function Login() {
       >
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg tracking-tight">Login</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto font-medium drop-shadow">
-          {greeting}, welcome back to FinanceApp!
+          {greeting}, welcome back to Saral Finance!
         </p>
   </motion.section>
 
@@ -49,7 +49,7 @@ export default function Login() {
         transition={{ duration: 0.7, delay: 0.2 }}
       >
         <motion.div
-          className="bg-white shadow-lg rounded-2xl p-6 sm:p-8 border-t-4 border-yellow-500"
+          className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 sm:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

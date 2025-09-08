@@ -12,12 +12,12 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="bg-white shadow-sm fixed top-0 w-full z-50 border-b border-gray-200 mb-8"
+  className="bg-white shadow-sm fixed top-0 w-full z-50 border-b border-gray-200 mb-8"
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo and Brand */}
           <div className="flex items-center space-x-2 text-2xl font-bold text-yellow-600">

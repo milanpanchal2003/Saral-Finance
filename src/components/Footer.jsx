@@ -4,13 +4,13 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGooglePlusG, FaGithub, FaInstag
 const Footer = () => {
   return (
     <motion.footer
-      className="bg-white text-yellow-700 pt-8 pb-4 px-4 md:px-0 mt-10 shadow-sm rounded-xl mx-auto w-full max-w-7xl"
+  className="bg-white text-yellow-700 pt-8 pb-4 px-2 sm:px-4 md:px-6 lg:px-8 mt-10 shadow-sm rounded-xl mx-auto w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-7xl"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
       <motion.div
-        className="w-full mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-8"
+  className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 pb-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

@@ -3,10 +3,11 @@ const siteConfig = {
   tagline: "Grow Your Wealth with Confidence",
   description: "Smart finance tools built for modern investors and savers.",
   navLinks: [
-    { name: "Home", href: "#" },
-    { name: "Features", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Contact", href: "/contact" },
+    { name: "Login", href: "/login" },
   ],
   features: [
     {

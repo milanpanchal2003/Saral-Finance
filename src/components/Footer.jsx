@@ -172,7 +172,7 @@ const Footer = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        <motion.p initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Tours. All rights reserved.</motion.p>
+        <motion.p initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Saral Finance. All rights reserved.</motion.p>
         <motion.a href="https://example.com/" className="hover:text-yellow-600 focus:text-yellow-600 transition-colors" initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>example.com</motion.a>
       </motion.div>
     </motion.footer>

@@ -1,6 +1,8 @@
 // src/pages/Login.jsx
 import { useState } from "react";
 import { motion } from 'framer-motion';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -20,6 +22,8 @@ export default function Login() {
   };
 
   return (
+<>
+    <Navbar />
     <motion.div
       className="bg-gray-50 min-h-screen w-full pt-20"
       initial={{ opacity: 0, y: 40 }}
@@ -118,5 +122,7 @@ export default function Login() {
         </motion.div>
       </motion.section>
     </motion.div>
+    <Footer />
+</>
   );
 }

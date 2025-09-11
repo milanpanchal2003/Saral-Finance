@@ -107,7 +107,7 @@ export default function Emi() {
         </motion.div>
       </header>
 
-      <main className="w-full flex-1 mx-auto p-1 xs:p-2 sm:p-4 grid gap-4 sm:gap-6 md:grid-cols-2">
+      <main className="w-1/2 flex-1 mx-auto p-1 xs:p-2 sm:p-4 grid gap-4 sm:gap-6 md:grid-cols-2">
         <motion.section
           layout
           className="rounded-2xl bg-white shadow-lg border border-yellow-100 p-3 xs:p-4 sm:p-6 w-full"

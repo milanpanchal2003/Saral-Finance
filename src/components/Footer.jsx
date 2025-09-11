@@ -165,7 +165,8 @@ const Footer = () => {
           <motion.p className="mt-3 text-sm text-gray-700" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>Subscribe to our mailing list and get updates to your email inbox.</motion.p>
         </motion.div>
       </motion.div>
-      <motion.p className="flex items-center justify-center" initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Saral Finance. All rights reserved.</motion.p>
+      <motion.p className="flex items-center justify-center" initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Saral Finance. All rights reserved.
+      </motion.p>
       <motion.div
         className="w-full mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500 mt-6"
         initial={{ opacity: 0, y: 20 }}

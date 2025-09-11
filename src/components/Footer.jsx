@@ -4,13 +4,13 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGooglePlusG, FaGithub, FaInstag
 const Footer = () => {
   return (
     <motion.footer
-  className="bg-white text-yellow-700 pt-8 pb-4 px-2 sm:px-4 md:px-6 lg:px-8 mt-10 shadow-sm rounded-xl mx-auto w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-7xl"
+  className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
       <motion.div
-  className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 pb-8"
+  className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 p-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -165,6 +165,7 @@ const Footer = () => {
           <motion.p className="mt-3 text-sm text-gray-700" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>Subscribe to our mailing list and get updates to your email inbox.</motion.p>
         </motion.div>
       </motion.div>
+      <motion.p className="flex items-center justify-center" initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Saral Finance. All rights reserved.</motion.p>
       <motion.div
         className="w-full mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500 mt-6"
         initial={{ opacity: 0, y: 20 }}
@@ -172,8 +173,8 @@ const Footer = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        <motion.p initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Saral Finance. All rights reserved.</motion.p>
-        <motion.a href="https://example.com/" className="hover:text-yellow-600 focus:text-yellow-600 transition-colors" initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>example.com</motion.a>
+        {/* <motion.p className="flex items-center justify-center" initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Saral Finance. All rights reserved.</motion.p> */}
+        {/* <motion.a href="https://example.com/" className="hover:text-yellow-600 focus:text-yellow-600 transition-colors" initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>example.com</motion.a> */}
       </motion.div>
     </motion.footer>
   );

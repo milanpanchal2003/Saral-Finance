@@ -19,10 +19,16 @@ const Navbar = () => {
   <div className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo and Brand */}
-          <div className="flex items-center space-x-2 text-2xl font-bold text-yellow-600">
-            <img src={"./img/saral.png"} alt="Saral Finance Logo" className="h-10 w-auto align-middle object-contain" style={{marginBottom: '2px'}} />
-            <span className="leading-tight">Saral finance</span>
+          <Link to="/" className="flex items-center space-x-2">
+          <div className="flex justify-center items-center space-x-2 font-bold text-yellow-600">
+            <img
+              src="./img/saral.png"
+              alt="Saral Finance Logo"
+              className="h-10 w-auto object-contain inline-block align-middle"
+            />
+            <span className="text-2xl leading-none align-middle mb-1">Saral finance</span>
           </div>
+          </Link>
           {/* Hamburger button for mobile */}
           <button
             className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-full border-2 border-yellow-600 bg-white/80 shadow focus:outline-none focus:ring-2 focus:ring-yellow-300"

@@ -1,43 +1,30 @@
-import React from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import './assets/css/App.css'
 import Home from './pages/Home';
-import About from './pages/About';
 import Services from './pages/Services';
+import About from './pages/About';
 import Contact from './pages/Contact';
-import Login from './pages/Login';
+import Login from './pages/login';
 
 function App() {
-  const location = useLocation();
   return (
-    <AnimatePresence mode="wait">
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <br/>
-        <div className="flex-grow">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={
-              <Home key={location.pathname} />
-            } />
-            <Route path="/about" element={
-              <About key={location.pathname} />
-            } />
-            <Route path="/services" element={
-              <Services key={location.pathname} />
-            } />
-            <Route path="/contact" element={
-              <Contact key={location.pathname} />
-            } />
-            <Route path="/login" element={
-              <Login key={location.pathname} />
-            } />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
-    </AnimatePresence>
+    <Router>
+      <Routes>
+        <Route path="/*" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/emi-calculator" element={<EmiCalculator />} /> */}
+        {/* <Route path="/investment-planner" element={<InvestmentPlanner />} /> */}
+        {/* <Route path="/expense-tracker" element={<ExpenseTracker />} /> */}
+        {/* <Route path="/financial-goals" element={<FinancialGoals />} /> */}
+        {/* <Route path="/budget-planner" element={<BudgetPlanner />} /> */}
+        {/* <Route path="/retirement-planner" element={<RetirementPlanner />} /> */}
+        {/* <Route path="/tax-calculator" element={<TaxCalculator />} /> */}
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
+    </Router>
   );
 }
 

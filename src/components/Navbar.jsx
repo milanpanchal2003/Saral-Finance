@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import img1 from '../assets/image/saral.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +20,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           {/* Logo and Brand */}
           <div className="flex items-center space-x-2 text-2xl font-bold text-yellow-600">
-            <img src={img1} alt="Saral Finance Logo" className="h-10 w-auto align-middle object-contain" style={{marginBottom: '2px'}} />
+            <img src={"./img/saral.png"} alt="Saral Finance Logo" className="h-10 w-auto align-middle object-contain" style={{marginBottom: '2px'}} />
             <span className="leading-tight">Saral finance</span>
           </div>
           {/* Hamburger button for mobile */}

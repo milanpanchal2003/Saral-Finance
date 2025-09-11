@@ -47,19 +47,19 @@ function buildSchedule({ principal, annualRatePct, months, emi }) {
 }
 
 export default function Emi() {
-  const [principal, setPrincipal] = useState(500000);
-  const [rate, setRate] = useState(10);
-  const [tenure, setTenure] = useState(24);
+  const [principal, setPrincipal] = useState();
+  const [rate, setRate] = useState();
+  const [tenure, setTenure] = useState();
   const [unit, setUnit] = useState("months");
   const [showSchedule, setShowSchedule] = useState(false);
 
   const months = unit === "years" ? Math.round((Number(tenure) || 0) * 12) : Number(tenure) || 0;
 
   function reset() {
-    setPrincipal(500000);
-    setRate(10);
-    setTenure(24);
-    setUnit("months");
+    setPrincipal("");
+    setRate("");
+    setTenure("");
+    setUnit("");
     setShowSchedule(false);
   }
 
@@ -79,9 +79,9 @@ export default function Emi() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 60, damping: 18 }}
     >
-      <header className="sticky top-0 z-20 border-b bg-white/80 backdrop-blur w-full">
+      <header className="sticky top-0 z-20 border-b bg-white/80 backdrop-blur w-1/2 items-center mx-auto">
         <motion.div
-          className="mx-auto w-full max-w-5xl px-2 sm:px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3"
+          className="mx-auto w-full px-2 sm:px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 80, damping: 16, delay: 0.1 }}
@@ -107,7 +107,7 @@ export default function Emi() {
         </motion.div>
       </header>
 
-      <main className="w-full flex-1 mx-auto max-w-5xl p-1 xs:p-2 sm:p-4 grid gap-4 sm:gap-6 md:grid-cols-2">
+      <main className="w-full flex-1 mx-auto p-1 xs:p-2 sm:p-4 grid gap-4 sm:gap-6 md:grid-cols-2">
         <motion.section
           layout
           className="rounded-2xl bg-white shadow-lg border border-yellow-100 p-3 xs:p-4 sm:p-6 w-full"
@@ -232,7 +232,7 @@ export default function Emi() {
                     className="overflow-hidden"
                   >
                     <motion.div className="mt-4 max-h-80 xs:max-h-96 overflow-x-auto overflow-y-auto rounded-2xl border border-yellow-100 bg-yellow-50 w-full">
-                      <table className="min-w-[500px] w-full text-xs sm:text-sm">
+                      <table className="w-full text-xs sm:text-sm">
                         <thead className="bg-yellow-100 text-yellow-700 sticky top-0">
                           <tr>
                             <th className="text-left px-3 py-2 font-medium">Month</th>

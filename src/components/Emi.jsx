@@ -107,6 +107,7 @@ export default function Emi() {
         </motion.div>
       </header>
 
+
       <main className="w-1/2 flex-1 mx-auto p-1 xs:p-2 sm:p-4 grid gap-4 sm:gap-6 md:grid-cols-2">
         <motion.section
           layout

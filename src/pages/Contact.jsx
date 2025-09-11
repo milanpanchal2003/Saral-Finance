@@ -1,6 +1,9 @@
 // src/pages/Contact.jsx
 import { useState } from "react";
 import { motion } from 'framer-motion';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+
 
 export default function Contact() {
   const today = new Date().toLocaleDateString("en-IN", {
@@ -26,6 +29,8 @@ export default function Contact() {
   };
 
   return (
+<>
+    <Navbar />
     <motion.div
       className="bg-gray-50 min-h-screen w-full pt-20 flex flex-col items-center"
       initial={{ opacity: 0, y: 40 }}
@@ -169,5 +174,7 @@ export default function Contact() {
         </motion.div>
       </motion.section>
     </motion.div>
+    <Footer />
+</>
   );
 }

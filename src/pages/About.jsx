@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+
 export default function About() {
 
   return (
+<>
+    <Navbar />
     <motion.div
       className="bg-gray-50 min-h-screen w-full pt-16 flex flex-col"
       initial={{ opacity: 0, y: 40 }}
@@ -133,5 +138,7 @@ export default function About() {
         </a>
       </motion.section>
     </motion.div>
+    <Footer />
+</>
   );
 }

@@ -25,9 +25,9 @@ const Footer = () => {
           transition={{ type: "spring", stiffness: 80, damping: 16, delay: 0.05 }}
         >
           <h2 className="text-lg font-bold mb-3 text-yellow-600 uppercase tracking-wide">Contact Info</h2>
-          <p className="mb-1 text-gray-700">📍 Tours, 10001, 5th Avenue, #06 lane street, NY - 62617</p>
-          <p className="mb-1 text-gray-700">📞 <a href="tel:+1(21)2344567" className="hover:text-yellow-600 transition-colors">+1(21) 234 4567</a></p>
-          <p className="mb-3 text-gray-700">✉️ <a href="mailto:info@example.com" className="hover:text-yellow-600 transition-colors">info@example.com</a></p>
+          <p className="mb-1 text-yellow-600">📍 Tours, 10001, 5th Avenue, #06 lane street, NY - 62617</p>
+          <p className="mb-1 text-yellow-600">📞 <a href="tel:+1(21)2344567" className="transition-colors">+1(21) 234 4567</a></p>
+          <p className="mb-3 text-yellow-600">✉️ <a href="mailto:info@example.com" className="transition-colors">info@example.com</a></p>
           <motion.div className="flex gap-3 mt-2" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{
             hidden: {},
             visible: { transition: { staggerChildren: 0.07 } },
@@ -94,8 +94,8 @@ const Footer = () => {
               >
                 <motion.a
                   href={item.href}
-                  className="text-black hover:text-yellow-600 focus:text-yellow-600 transition-colors"
-                  whileHover={{ scale: 1.08, color: "#ca8a04", x: 8 }}
+                  className="inline-block text-yellow-600 focus:text-yellow-300 hover:text-yellow-300 transition-colors border-b border-yellow-300"
+                  whileHover={{ scale: 1.08, x: 8 }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: "spring", stiffness: 300, damping: 18 }}
                 >
@@ -141,8 +141,8 @@ const Footer = () => {
               >
                 <motion.a
                   href={item.href}
-                  className="text-black hover:text-yellow-600 focus:text-yellow-600 transition-colors"
-                  whileHover={{ scale: 1.08, color: "#ca8a04", x: 8 }}
+                    className="inline-block text-yellow-600 focus:text-yellow-300 hover:text-yellow-300 transition-colors border-b border-yellow-300"
+                  whileHover={{ scale: 1.08, x: 8 }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: "spring", stiffness: 300, damping: 18 }}
                 >
@@ -162,13 +162,13 @@ const Footer = () => {
             <input type="email" name="email" placeholder="Email Address" required className="px-3 py-2 rounded text-gray-800 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-600" />
             <button type="submit" className="bg-yellow-600 text-white font-semibold px-4 py-2 rounded hover:bg-yellow-300 hover:text-yellow-700 focus:text-yellow-700 focus:bg-yellow-300 transition-colors shadow">Subscribe</button>
           </motion.form>
-          <motion.p className="mt-3 text-sm text-gray-700" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>Subscribe to our mailing list and get updates to your email inbox.</motion.p>
+          <motion.p className="mt-3 text-sm text-yellow-600" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>Subscribe to our mailing list and get updates to your email inbox.</motion.p>
         </motion.div>
       </motion.div>
-      <motion.p className="flex items-center justify-center" initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Saral Finance. All rights reserved.
+      <motion.p className="flex items-center justify-center text-yellow-600" initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}>© 2025 Saral Finance. All rights reserved.
       </motion.p>
       <motion.div
-        className="w-full mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500 mt-6"
+        className="w-full mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-yellow-600 mt-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

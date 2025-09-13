@@ -59,7 +59,7 @@ export default function Contact() {
 <>
     <Navbar />
     <motion.div
-      className="bg-gray-50 min-h-screen w-full pt-20 flex flex-col items-center"
+      className="bg-gray-50 min-h-screen w-full pt-20 flex flex-col items-center pb-20"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}

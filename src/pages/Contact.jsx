@@ -22,11 +22,38 @@ export default function Contact() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+// https://saral-backend-3nvn.onrender.com/api/users/contact
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   alert(`Thanks ${formData.name}, we’ll get back to you soon!`);
+  // };
+   const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Thanks ${formData.name}, we’ll get back to you soon!`);
-  };
+
+  try {
+    const res = await fetch("https://saral-backend-3nvn.onrender.com/api/users/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", //JavaScript Object Notation
+      },
+      body: JSON.stringify(formData), // formData ko string me convert kar ke bhej rahe hain
+    });
+
+
+    const data = await res.json();
+    console.log("Response:", data);
+    if (res.ok) {
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      alert(data.message);
+    }
+  } catch (err) {
+    console.error("Error:", err);
+  }
+};
+
 
   return (
 <>

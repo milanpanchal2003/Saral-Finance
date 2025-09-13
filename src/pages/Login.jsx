@@ -107,6 +107,14 @@ export default function Login() {
                 Login
               </button>
             </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="w-full py-3 bg-yellow-600 text-white font-bold rounded-full shadow-lg hover:bg-yellow-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              >
+                Login with Google
+              </button>
+            </div>
           </form>
 
           {/* Extra Links */}

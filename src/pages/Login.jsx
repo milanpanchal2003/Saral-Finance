@@ -1,6 +1,8 @@
 // src/pages/Login.jsx
 import { useState } from "react";
 import { motion } from 'framer-motion';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -20,6 +22,8 @@ export default function Login() {
   };
 
   return (
+<>
+    <Navbar />
     <motion.div
       className="bg-gray-50 min-h-screen w-full pt-20"
       initial={{ opacity: 0, y: 40 }}
@@ -103,6 +107,14 @@ export default function Login() {
                 Login
               </button>
             </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="w-full py-3 bg-yellow-600 text-white font-bold rounded-full shadow-lg hover:bg-yellow-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              >
+                Login with Google
+              </button>
+            </div>
           </form>
 
           {/* Extra Links */}
@@ -118,5 +130,7 @@ export default function Login() {
         </motion.div>
       </motion.section>
     </motion.div>
+    <Footer />
+</>
   );
 }

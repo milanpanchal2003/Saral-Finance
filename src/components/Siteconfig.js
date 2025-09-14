@@ -1,5 +1,5 @@
 const siteConfig = {
-  siteName: "GoldBank",
+  siteName: "Gold Bank",
   tagline: "Grow Your Wealth with Confidence",
   description: "Smart finance tools built for modern investors and savers.",
   navLinks: [

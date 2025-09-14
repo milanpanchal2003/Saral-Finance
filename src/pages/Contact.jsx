@@ -1,6 +1,9 @@
 // src/pages/Contact.jsx
 import { useState } from "react";
 import { motion } from 'framer-motion';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+
 
 export default function Contact() {
   const today = new Date().toLocaleDateString("en-IN", {
@@ -19,15 +22,44 @@ export default function Contact() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+// https://saral-backend-3nvn.onrender.com/api/users/contact
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   alert(`Thanks ${formData.name}, we’ll get back to you soon!`);
+  // };
+   const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Thanks ${formData.name}, we’ll get back to you soon!`);
-  };
+
+  try {
+    const res = await fetch("https://saral-backend-3nvn.onrender.com/api/users/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", //JavaScript Object Notation
+      },
+      body: JSON.stringify(formData), // formData ko string me convert kar ke bhej rahe hain
+    });
+
+
+    const data = await res.json();
+    console.log("Response:", data);
+    if (res.ok) {
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      alert(data.message);
+    }
+  } catch (err) {
+    console.error("Error:", err);
+  }
+};
+
 
   return (
+<>
+    <Navbar />
     <motion.div
-      className="bg-gray-50 min-h-screen w-full pt-20 flex flex-col items-center"
+      className="bg-gray-50 min-h-screen w-full pt-20 flex flex-col items-center pb-20"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
@@ -169,5 +201,7 @@ export default function Contact() {
         </motion.div>
       </motion.section>
     </motion.div>
+    <Footer />
+</>
   );
 }

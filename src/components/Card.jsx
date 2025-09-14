@@ -86,13 +86,6 @@ export default function Card() {
           </div>
         </div>
       </motion.section>
-
-      {/* Footer */}
-      <footer className="w-full bg-white border-t py-5 sm:py-6 mt-8 sm:mt-12">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} FinWise. All rights reserved.
-        </div>
-      </footer>
     </motion.div>
   );
 }

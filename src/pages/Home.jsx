@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import Card from '../components/Card';
 import Emi from '../components/Emi';
 import Features from '../components/Config';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const hour = new Date().getHours();
@@ -29,6 +32,7 @@ export default function Home() {
 
   return (
    <>
+   <Navbar />
   <motion.div
     className="bg-gray-50 w-full pt-16 sm:pt-20 min-h-0 flex flex-col"
     initial={{ opacity: 0, y: 40 }}
@@ -145,24 +149,25 @@ export default function Home() {
           Ready to take control of your finances?
         </h2>
         <div className="flex flex-col xs:flex-row justify-center gap-3 sm:gap-4 px-2 w-full max-w-xs sm:max-w-md mx-auto">
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="bg-white text-yellow-700 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow hover:bg-gray-100 transition-all duration-300 text-sm sm:text-base w-full xs:w-auto block xs:inline-block"
           >
             Login
-          </a>
-          <a
-            href="/signup"
+          </Link>
+          <Link
+            to="/login"
             className="bg-white text-yellow-700 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow hover:bg-gray-100 transition-all duration-300 text-sm sm:text-base w-full xs:w-auto block xs:inline-block"
           >
             Sign Up
-          </a>
+          </Link>
         </div>
       </motion.section>
     </motion.div>
     <Features/>
     <Emi/>
     <Card/>
+    <Footer/>
    </>
   );
 };

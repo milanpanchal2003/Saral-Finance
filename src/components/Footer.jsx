@@ -80,7 +80,7 @@ const Footer = () => {
           >
             {[
               { href: "/about", label: "About Us" },
-              { href: "#", label: "Services" },
+              { href: "services", label: "Services" },
               { href: "#", label: "Work with us" },
               { href: "/contact", label: "Contact Us" },
               { href: "#", label: "Rewards" },

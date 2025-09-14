@@ -38,25 +38,13 @@ export default function About() {
   <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 sm:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
           <h2 className="text-2xl font-bold mb-4 text-yellow-600">Our Mission</h2>
           <p className="text-gray-600 leading-relaxed">
-         To make finance accessible for everyone — from small entrepreneurs and self-employed individuals to growing businesses — by providing simple, transparent, and reliable financial solutions. We aim to empower people with the right funding at the right time, helping them turn their dreams into reality.
-          </p>
-        </div>
-  <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 sm:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
-          <h2 className="text-2xl font-bold mb-4 text-yellow-600">Our Mission</h2>
-          <p className="text-gray-600 leading-relaxed">
-         To make finance accessible for everyone — from small entrepreneurs and self-employed individuals to growing businesses — by providing simple, transparent, and reliable financial solutions. We aim to empower people with the right funding at the right time, helping them turn their dreams into reality.
-          </p>
-        </div>
-  <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 sm:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
-          <h2 className="text-2xl font-bold mb-4 text-yellow-600">Our Mission</h2>
-          <p className="text-gray-600 leading-relaxed">
-         To make finance accessible for everyone — from small entrepreneurs and self-employed individuals to growing businesses — by providing simple, transparent, and reliable financial solutions. We aim to empower people with the right funding at the right time, helping them turn their dreams into reality.
+            We aim to simplify financial management for individuals and businesses by providing innovative solutions that are secure, reliable, and easy to use. Our mission is to bridge the gap between technology and finance to create long-lasting value.
           </p>
         </div>
   <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 sm:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
           <h2 className="text-2xl font-bold mb-4 text-yellow-600">Our Vision</h2>
           <p className="text-gray-600 leading-relaxed">
-         Our vision is to empower as many people as possible by providing easy access to financial solutions that truly make a difference in their lives. We strive to grow as a trusted organization, expanding our reach and impact with every step. Looking ahead, we aim to evolve into a full-fledged bank, creating even greater opportunities for individuals and businesses across India.
+            To be a trusted global leader in digital finance solutions, empowering millions to make confident financial decisions and achieve financial freedom.
           </p>
         </div>
       </motion.section>

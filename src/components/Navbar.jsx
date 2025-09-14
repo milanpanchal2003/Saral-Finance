@@ -65,7 +65,7 @@ const Navbar = () => {
               >
                 <Link
                   to={item.to}
-                  className="text-yellow-600 hover:text-yellow-800 focus:text-yellow-600 transition-colors border-b border-yellow-300"
+                  className="hover:text-yellow-600 focus:text-yellow-600 transition-colors"
                   aria-label={item.label}
                 >
                   {item.label}

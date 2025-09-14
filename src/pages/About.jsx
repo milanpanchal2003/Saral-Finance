@@ -36,7 +36,7 @@ export default function About() {
         transition={{ duration: 0.7, delay: 0.2 }}
       >
   <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 sm:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
-          <h2 className="text-2xl font-bold mb-4 text-yellow-600">Our Mission</h2>
+          <h2 className="text-2xl font-bold mb-4 text-yellow-600">Our goal</h2>
           <p className="text-gray-600 leading-relaxed">
          To make finance accessible for everyone — from small entrepreneurs and self-employed individuals to growing businesses — by providing simple, transparent, and reliable financial solutions. We aim to empower people with the right funding at the right time, helping them turn their dreams into reality.
           </p>
@@ -48,6 +48,48 @@ export default function About() {
           </p>
         </div>
       </motion.section>
+
+      {/* intro */}
+
+      <motion.section
+        className="w-full text-center py-8 sm:py-14 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
+  <h2 className="text-xl xs:text-2xl sm:text-3xl font-extrabold mb-3 sm:mb-6 tracking-tight">
+          At Saral Finance, we don’t just provide financial products <br/> we build long-term relationships based on trust, transparency, and results.
+        </h2>
+       
+      </motion.section>
+
+      {/* intro 2 */}
+
+
+       <motion.section
+        className="w-full max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 md:px-12 py-8 sm:py-16 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 md:gap-12"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+  <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 sm:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
+          <h2 className="text-2xl font-bold mb-4 text-yellow-600">About Us</h2>
+          <p className="text-gray-600 leading-relaxed">
+        Saral Finance is a trusted financial services company dedicated to making finance simple, transparent, and accessible. With a strong presence across India, we provide a wide range of solutions including Personal Loans, Business Loans, Professional Loans, Home Loans, Vehicle Loans, and Insurance & Investment planning.
+
+          </p>
+        </div>
+  <div className="bg-white shadow-lg rounded-2xl p-4 xs:p-6 sm:p-8 border-t-4 border-yellow-500 hover:scale-105 hover:shadow-2xl transition-all duration-300">
+          <h2 className="text-2xl font-bold mb-4 text-yellow-600">Our Mission</h2>
+          <p className="text-gray-600 leading-relaxed">
+           Our mission is to remove the complexity of traditional finance by offering fast approvals, minimal documentation, and customer-first solutions. Over the years, we’ve helped thousands of individuals and businesses achieve their financial goals with ease and confidence.
+
+          </p>
+        </div>
+      </motion.section>
+
 
       {/* Team Section */}
       <motion.section
@@ -120,6 +162,7 @@ export default function About() {
       </motion.section>
 
       {/* Footer Call to Action */}
+      
       <motion.section
         className="w-full text-center py-8 sm:py-14 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white"
         initial={{ opacity: 0, y: 40 }}

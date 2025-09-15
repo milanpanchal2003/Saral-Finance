@@ -25,20 +25,21 @@ const Footer = () => {
           transition={{ type: "spring", stiffness: 80, damping: 16, delay: 0.05 }}
         >
           <h2 className="text-lg font-bold mb-3 text-yellow-600 uppercase tracking-wide">Contact Info</h2>
-          <p className="mb-1 text-gray-700">📍 Tours, 10001, 5th Avenue, #06 lane street, NY - 62617</p>
-          <p className="mb-1 text-gray-700">📞 <a href="tel:+1(21)2344567" className="hover:text-yellow-600 transition-colors">+1(21) 234 4567</a></p>
-          <p className="mb-3 text-gray-700">✉️ <a href="mailto:info@example.com" className="hover:text-yellow-600 transition-colors">info@example.com</a></p>
+          <p className="mb-1 text-gray-700">📍 3rd floor , infront of multipurpose, gumanpura</p>
+          <p className="mb-1 text-gray-700">📞 <a href="tel:+1(21)2344567" className="hover:text-yellow-600 transition-colors">7877794600</a><br/>
+         📞 <a href="tel:+1(21)2344567" className="hover:text-yellow-600 transition-colors">8442041467
+</a></p>
+          <p className="mb-3 text-gray-700">✉️ <a href="mailto:ggauttamsaralfin@gmail.com" className="hover:text-yellow-600 transition-colors">ggauttamsaralfin@gmail.com</a></p>
           <motion.div className="flex gap-3 mt-2" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{
             hidden: {},
             visible: { transition: { staggerChildren: 0.07 } },
           }}>
             {[
-              { icon: FaFacebookF, label: "Facebook", href: "#" },
+              { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61578988810196#" },
               { icon: FaTwitter, label: "Twitter", href: "#" },
-              { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
-              { icon: FaGooglePlusG, label: "Google Plus", href: "#" },
-              { icon: FaGithub, label: "GitHub", href: "#" },
-              { icon: FaInstagram, label: "Instagram", href: "#" },
+              { icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/saral-financial-services-8ba890380/" },
+            
+              { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/saralindiafinserv?igsh=MTRna205aHQ4cnNxdQ==" },
               { icon: FaWhatsapp, label: "Whatsapp", href: "#" },
             ].map(({ icon: Icon, label, href }) => (
               <motion.a

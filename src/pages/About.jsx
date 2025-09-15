@@ -101,9 +101,9 @@ export default function About() {
       >
   <div className="w-full max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 md:px-12 text-center">
           <h2 className="text-3xl font-extrabold text-yellow-700 mb-12 tracking-tight">Meet Our Team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-7 md:gap-10">
             {/* Team Member */}
-            <motion.div
+
+          <motion.div
               className="bg-white rounded-2xl shadow-md p-3 xs:p-4 sm:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -124,6 +124,9 @@ export default function About() {
 
               </p>
             </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-7 md:gap-10">
+           
+            
             <motion.div
               className="bg-white rounded-2xl shadow-md p-3 xs:p-4 sm:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}

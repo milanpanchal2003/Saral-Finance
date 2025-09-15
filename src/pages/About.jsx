@@ -115,10 +115,13 @@ export default function About() {
                 alt="Team Member"
                 className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 mx-auto rounded-full mb-3 sm:mb-4 object-cover border-4 border-yellow-300 shadow"
               />
-              <h3 className="text-xl font-bold text-gray-800">Milan Panchal</h3>
+              <h3 className="text-xl font-bold text-gray-800">Mr. Govind Gauttam</h3>
               <p className="text-yellow-600 font-semibold">CEO & Founder</p>
               <p className="text-gray-600 text-sm mt-2">
-                Passionate about fintech innovation and helping people achieve financial stability.
+               Leading Saral Finance with a vision to simplify financial services and make them accessible to everyone.💼 Experience: 15+ Years
+
+
+
               </p>
             </motion.div>
             <motion.div
@@ -133,10 +136,14 @@ export default function About() {
                 alt="Team Member"
                 className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 mx-auto rounded-full mb-3 sm:mb-4 object-cover border-4 border-yellow-300 shadow"
               />
-              <h3 className="text-xl font-bold text-gray-800">Jane Doe</h3>
-              <p className="text-yellow-600 font-semibold">Chief Financial Officer</p>
+              <h3 className="text-xl font-bold text-gray-800">Tripti Khinchi</h3>
+              <p className="text-yellow-600 font-semibold">HR & Administration
+</p>
               <p className="text-gray-600 text-sm mt-2">
-                Expert in financial planning and risk management with 10+ years of experience.
+                Ensuring smooth operations, employee growth, and organizational efficiency.
+💼 Experience: 5 Years
+
+
               </p>
             </motion.div>
             <motion.div
@@ -151,10 +158,35 @@ export default function About() {
                 alt="Team Member"
                 className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 mx-auto rounded-full mb-3 sm:mb-4 object-cover border-4 border-yellow-300 shadow"
               />
-              <h3 className="text-xl font-bold text-gray-800">John Smith</h3>
-              <p className="text-yellow-600 font-semibold">Tech Lead</p>
+              <h3 className="text-xl font-bold text-gray-800">Md Rahil</h3>
+              <p className="text-yellow-600 font-semibold">Business Development Manager
+</p>
               <p className="text-gray-600 text-sm mt-2">
-                Building secure, scalable financial platforms using modern technologies.
+                Focused on partnerships, market expansion, and driving new opportunities.
+💼 Experience: 2 Years
+
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-2xl shadow-md p-3 xs:p-4 sm:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Team Member"
+                className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 mx-auto rounded-full mb-3 sm:mb-4 object-cover border-4 border-yellow-300 shadow"
+              />
+              <h3 className="text-xl font-bold text-gray-800">Deepika Samariya</h3>
+              <p className="text-yellow-600 font-semibold">Sales Team Manager
+
+</p>
+              <p className="text-gray-600 text-sm mt-2">
+                Managing sales strategies and building strong client relationships.
+💼 Experience: 3 Years
+
               </p>
             </motion.div>
           </div>

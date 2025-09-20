@@ -103,27 +103,7 @@ export default function About() {
           <h2 className="text-3xl font-extrabold text-yellow-700 mb-12 tracking-tight">Meet Our Team</h2>
             {/* Team Member */}
 
-          <motion.div
-              className="bg-white rounded-2xl shadow-md p-3 xs:p-4 sm:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Team Member"
-                className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 mx-auto rounded-full mb-3 sm:mb-4 object-cover border-4 border-yellow-300 shadow"
-              />
-              <h3 className="text-xl font-bold text-gray-800">Mr. Govind Gauttam</h3>
-              <p className="text-yellow-600 font-semibold">CEO & Founder</p>
-              <p className="text-gray-600 text-sm mt-2">
-               Leading Saral Finance with a vision to simplify financial services and make them accessible to everyone.💼 Experience: 15+ Years
-
-
-
-              </p>
-            </motion.div>
+        
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-7 md:gap-10">
            
             
@@ -149,6 +129,27 @@ export default function About() {
 
               </p>
             </motion.div>
+              <motion.div
+              className="bg-white rounded-2xl shadow-md p-3 xs:p-4 sm:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Team Member"
+                className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 mx-auto rounded-full mb-3 sm:mb-4 object-cover border-4 border-yellow-300 shadow"
+              />
+              <h3 className="text-xl font-bold text-gray-800">Mr. Govind Gauttam</h3>
+              <p className="text-yellow-600 font-semibold">CEO & Founder</p>
+              <p className="text-gray-600 text-sm mt-2">
+               Leading Saral Finance with a vision to simplify financial services and make them accessible to everyone.💼 Experience: 15+ Years
+
+
+
+              </p>
+            </motion.div>
             <motion.div
               className="bg-white rounded-2xl shadow-md p-3 xs:p-4 sm:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
@@ -170,28 +171,7 @@ export default function About() {
 
               </p>
             </motion.div>
-            <motion.div
-              className="bg-white rounded-2xl shadow-md p-3 xs:p-4 sm:p-6 border-b-4 border-yellow-400 hover:scale-105 hover:shadow-xl transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Team Member"
-                className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 mx-auto rounded-full mb-3 sm:mb-4 object-cover border-4 border-yellow-300 shadow"
-              />
-              <h3 className="text-xl font-bold text-gray-800">Deepika Samariya</h3>
-              <p className="text-yellow-600 font-semibold">Sales Team Manager
-
-</p>
-              <p className="text-gray-600 text-sm mt-2">
-                Managing sales strategies and building strong client relationships.
-💼 Experience: 3 Years
-
-              </p>
-            </motion.div>
+          
           </div>
         </div>
       </motion.section>
